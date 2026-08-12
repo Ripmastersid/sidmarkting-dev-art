@@ -1,0 +1,221 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0d0d11;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* HERO */
+#hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #0d0d11 0%, #161622 100%);
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  #npc-container {
+    height: 300px !important;
+  }
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, #0070f3, #00dfd8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #b3b3b3;
+  margin-bottom: 30px;
+}
+
+/* BOTÃO PULSANTE */
+.pulse-button {
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0070f3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(0, 112, 243, 0.7);
+  animation: pulse 1.6s infinite;
+  transition: background 0.3s;
+}
+
+.pulse-button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(0, 112, 243, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px rgba(0, 112, 243, 0);
+  }
+  100% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(0, 112, 243, 0);
+  }
+}
+
+/* CONTAINER DO NPC 3D */
+#npc-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+/* SEÇÃO FORMULÁRIO COM TRANSIÇÃO DA ESQUERDA PARA DIREITA */
+#form-section {
+  padding: 80px 20px;
+  background-color: #12121a;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.hidden-section {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.visible-section {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.form-container {
+  max-width: 600px;
+  width: 100%;
+  background: #1c1c27;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.form-container h2 {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #b3b3b3;
+}
+
+.input-group input, .input-group textarea {
+  width: 100%;
+  padding: 12px;
+  background: #0d0d11;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #fff;
+}
+
+#submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #25d366;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* ACCORDION (MAIS DETALHES) */
+.details-accordion {
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.accordion-btn {
+  background: none;
+  border: none;
+  color: #00dfd8;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  text-align: left;
+}
+
+.accordion-content {
+  display: none;
+  margin-top: 15px;
+  color: #b3b3b3;
+  line-height: 1.6;
+}
+
+.external-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0070f3;
+  text-decoration: none;
+}
+
+/* POPUP */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.3s;
+}
+
+.popup-box {
+  background: #1c1c27;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.popup-box h3 { margin-bottom: 15px; color: #ff3333; }
+#close-popup {
+  margin-top: 20px; padding: 10px 20px;
+  background: #0070f3; border: none; color: #fff; border-radius: 4px; cursor: pointer;
+}
+
+.hidden { display: none !important; }
+
