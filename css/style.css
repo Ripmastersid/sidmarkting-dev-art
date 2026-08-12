@@ -157,3 +157,23 @@ footer a { text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
+/* ========== HERO COM GIF (moldura de vidro) ========== */
+.hero-frame {
+  position: absolute; top: 9vh; left: 0; right: 0; margin-inline: auto;
+  width: min(78vw, 430px); aspect-ratio: 1 / 1; z-index: 1;
+  animation: float 7s ease-in-out infinite;
+  box-shadow: 0 30px 70px -12px rgba(0,255,136,.16), 0 34px 90px rgba(122,13,13,.28);
+}
+.hero-gif {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  opacity: 0; transition: opacity .9s ease;
+  filter: saturate(.9) brightness(.95) contrast(1.02);
+}
+.hero-gif.loaded { opacity: 1; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@media (min-width: 900px) {
+  .hero-frame { left: auto; right: 5vw; margin-inline: 0; top: 12vh; width: min(36vw, 460px); }
+}
