@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sid Marketing — Todo negócio precisa estar online</title>
+  <meta name="description" content="Grande, pequeno, PJ, MEI, freelancer ou S.A.: descubra por que ter um site próprio é a decisão que separa negócios que crescem dos que desaparecem." />
+  <meta name="theme-color" content="#050404" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sid Marketing — Todo negócio precisa estar online" />
+  <meta property="og:description" content="Veja a importância de um site para o seu segmento profissional ou negócio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/favicon-icon.png" />
+  <link rel="icon" type="image/png" href="/favicon-icon.png" />
+  <!-- Tipografia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
+  <!-- Three.js (só o módulo 3D usa) -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+
+  <!-- Fundo "tinta líquida": vermelho escuro + preto + verde se misturando -->
+  <div class="ink-bg" aria-hidden="true">
+    <div class="blob blob-red"></div>
+    <div class="blob blob-green"></div>
+    <div class="blob blob-crimson"></div>
+  </div>
+
+  <!-- Loader do 3D -->
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Carregando experiência 3D…</p>
+  </div>
+
+  <header class="topbar">
+    <span class="brand">SID<strong>MARKETING</strong></span>
+    <a class="topbar-cta" href="#lead">Quero meu site</a>
+  </header>
+
+  <!-- ============ HERO (isolado — o 3D vive só aqui) ============ -->
+  <section id="hero">
+    <div id="hero-canvas"></div>
+    <div class="hero-copy">
+      <h1>Todo negócio precisa <span class="accent">estar online.</span></h1>
+      <p>Quem não é visto, não é lembrado. Descubra por que ter um site próprio separa negócios que crescem dos que desaparecem.</p>
+      <a class="btn" href="#importancia">Descobrir agora ↓</a>
+    </div>
+  </section>
+
+  <!-- ============ POR QUE TER UM SITE ============ -->
+  <section id="importancia" class="section">
+    <h2 data-reveal="top">Por que ter um site hoje?</h2>
+    <p class="lead" data-reveal="bottom">A primeira atitude de qualquer cliente é pesquisar online. Se o seu negócio não aparece, o cliente existe — mas para o concorrente, não para você.</p>
+    <div class="stats">
+      <div class="glass stat" data-reveal="left"><strong>81%</strong><span>dos consumidores pesquisam online antes de comprar</span></div>
+      <div class="glass stat" data-reveal="bottom"><strong>75%</strong><span>julgam a credibilidade de uma empresa pelo site dela</span></div>
+      <div class="glass stat" data-reveal="right"><strong>24/7</strong><span>seu site aberto, vendendo e informando — até quando você dorme</span></div>
+    </div>
+  </section>
+
+  <!-- ============ BLOCOS POR PERFIL (carrossel) ============ -->
+  <section id="segmentos" class="section">
+    <div class="section-head">
+      <h2 data-reveal="left">Feito para o seu segmento</h2>
+      <div class="car-controls">
+        <button class="car-btn" data-target="carousel-perfis" data-dir="-1" aria-label="Anterior">‹</button>
+        <button class="car-btn" data-target="carousel-perfis" data-dir="1" aria-label="Próximo">›</button>
+      </div>
+    </div>
+    <div class="carousel" id="carousel-perfis">
+      <article class="glass card" data-reveal="left"><h3>Grandes empresas</h3><p>Autoridade à altura do seu nome. Um site institucional sólido protege a reputação da marca, centraliza campanhas e vira a vitrine definitiva para investidores e mercado.</p></article>
+      <article class="glass card" data-reveal="bottom"><h3>Pequenos negócios</h3><p>Pareça — e funcione — como grande. Um site coloca sua loja no mapa do Google, vende enquanto você atende e gera confiança antes mesmo de o cliente entrar pela porta.</p></article>
+      <article class="glass card" data-reveal="right"><h3>Pessoa física</h3><p>Você é a sua marca. Um currículo vivo e portfólio online para quem pesquisa o seu nome no Google — e precisa encontrar você, não outra pessoa.</p></article>
+      <article class="glass card" data-reveal="left"><h3>PJ / MEI</h3><p>CNPJ com site fecha mais orçamentos. Credibilidade imediata na hora da cotação, postura profissional e clientes que chegam prontos para comprar.</p></article>
+      <article class="glass card" data-reveal="bottom"><h3>Freelancers</h3><p>Seu escritório é o mundo. Clientes locais e internacionais encontram você pela busca, veem seu portfólio e contratam sem intermediários nem comissões.</p></article>
+      <article class="glass card" data-reveal="right"><h3>S.A. / Ltda</h3><p>Presença institucional de verdade. Licitações, parceiros e investidores verificam sua existência digital primeiro. Site sólido é confiança e valorização da empresa.</p></article>
+    </div>
+  </section>
+
+  <!-- ============ MARQUEE (efeito <marquee> em CSS) ============ -->
+  <div class="marquee" aria-label="Veja a importância de um site para o seu segmento profissional ou negócio">
+    <div class="marquee-track">
+      <span>VEJA A IMPORTÂNCIA DE UM SITE PARA O SEU SEGMENTO PROFISSIONAL OU NEGÓCIO ✦</span>
+      <span aria-hidden="true">VEJA A IMPORTÂNCIA DE UM SITE PARA O SEU SEGMENTO PROFISSIONAL OU NEGÓCIO ✦</span>
+    </div>
+  </div>
+
+  <!-- ============ FORMULÁRIO DE LEAD → WHATSAPP ============ -->
+  <section id="lead" class="section">
+    <div class="glass form-wrap" data-reveal="zoom">
+      <h2>E para o SEU segmento?</h2>
+      <p class="lead">Deixe seus dados e receba no WhatsApp um panorama rápido sobre a importância de um site para o seu tipo de negócio ou profissão.</p>
+      <form id="lead-form" class="form-grid">
+        <label>Nome *<input name="nome" required placeholder="Seu nome" /></label>
+        <label>Número de contato *<input name="contato" type="tel" required placeholder="(21) 9 0000-0000" /></label>
+        <label>E-mail (opcional)<input name="email" type="email" placeholder="voce@exemplo.com" /></label>
+        <label>Conte brevemente seu negócio ou profissão *<textarea name="descricao" required rows="3" placeholder="Ex.: tenho uma barbearia, sou designer freelance, tenho uma Ltda de logística…"></textarea></label>
+        <label class="check"><input type="checkbox" required /> Autorizo o contato da Sid Marketing pelos dados informados.</label>
+        <button class="btn btn-send" type="submit">Receber análise no WhatsApp</button>
+        <p id="form-ok" hidden>✅ Pronto! Abrimos seu WhatsApp com a mensagem montada. É só enviar.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ RODAPÉ ============ -->
+  <footer>
+    <p><span class="brand">SID<strong>MARKETING</strong></span> — sidmarkting.com.br</p>
+    <p>
+      <a href="https://wa.me/5521966053200" target="_blank" rel="noopener">📱 (21) 96605-3200</a> ·
+      <a href="mailto:sidnei.santos.marcketing@gmail.com">✉️ sidnei.santos.marcketing@gmail.com</a>
+    </p>
+    <p class="copy">© <span id="year"></span> Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a class="wa-float" href="https://wa.me/5521966053200?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20ter%20um%20site." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+  </a>
+
+  <script type="module" src="/js/character3d.js"></script>
+  <script defer src="/js/main.js"></script>
+</body>
+  </html>
