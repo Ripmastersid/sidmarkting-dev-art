@@ -4,80 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sid Marketing & Dev</title>
+  <!-- Link direto para o Favicon que está no seu repositório -->
   <link rel="icon" type="image/png" href="favicon-icon.png">
   <link rel="stylesheet" href="style.css">
-  <!-- Importação do Three.js e dependências para rodar o modelo Draco -->
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com",
-        "three/addons/": "https://unpkg.com"
-      }
-    }
-  </script>
 </head>
 <body>
+
+  <!-- CABEÇALHO (HEADER) -->
+  <header id="main-header">
+    <div class="header-container">
+      <div class="logo-area">
+        <img src="favicon-icon.png" alt="Icone Sid" class="header-icon">
+        <span class="brand-name">sidmarkting-dev-art</span>
+      </div>
+      <!-- Menu Hambúrguer Visual -->
+      <div class="menu-hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </header>
 
   <!-- HERO SECTION -->
   <section id="hero">
     <div class="hero-container">
-      <div class="hero-text" id="welcome-message">
+      <div class="hero-text">
         <h1>Transforme sua Presença Digital</h1>
         <p>Criamos soluções web de alto impacto para destacar o seu negócio no mercado atual.</p>
-        <button id="cta-button" class="pulse-button">Quero Alavancar Meu Negócio</button>
+        <!-- Chamada direta de função sem depender de scripts externos complexos -->
+        <button class="pulse-button" onclick="ativarFormulario()">Quero Alavancar Meu Negócio</button>
       </div>
-      <!-- Container onde o NPC 3D será renderizado -->
-      <div id="npc-container"></div>
-    </div>
-  </section>
-
-  <!-- SEÇÃO DO FORMULÁRIO (Aparece com efeito Slide-in) -->
-  <section id="form-section" class="hidden-section">
-    <div class="form-container">
-      <h2>Conte-me sobre o seu projeto</h2>
-      <form id="lead-form">
-        <div class="input-group">
-          <label for="nome">Nome Completo</label>
-          <input type="text" id="nome" required placeholder="Seu nome">
-        </div>
-        <div class="input-group">
-          <label for="whatsapp">WhatsApp</label>
-          <input type="tel" id="whatsapp" required placeholder="(21) 96605-3200">
-        </div>
-        <div class="input-group">
-          <label for="email">E-mail Comercial</label>
-          <input type="email" id="email" required placeholder="seu@email.com">
-        </div>
-        <div class="input-group">
-          <label for="negocio">Características do Negócio</label>
-          <textarea id="negocio" required placeholder="Descreva brevemente o seu nicho ou empresa..."></textarea>
-        </div>
-        <button type="submit" id="submit-btn">Enviar via WhatsApp</button>
-      </form>
-
-      <!-- SEÇÃO EXPANSÍVEL: MAIS DETALHES -->
-      <div class="details-accordion">
-        <button id="toggle-details" class="accordion-btn">A Importância de um Site para o seu Negócio ▼</button>
-        <div id="details-content" class="accordion-content">
-          <p>Hoje em dia, uma empresa sem site não possui credibilidade. Um site estruturado funciona como sua vitrine 24 horas por dia, gerando novos leads e profissionalizando sua marca.</p>
-          <a href="https://sebrae.com.br" target="_blank" class="external-link">Ver Matéria Pública Informativa (Sebrae)</a>
-        </div>
+      
+      <!-- CONTAINER SEGURO PARA O NPC 3D -->
+      <div id="npc-container">
+        <!-- Visualizador 3D nativo e leve que lê o seu arquivo do repositório -->
+        <model-viewer 
+          src="adultman-sid3d-v1.glb" 
+          camera-controls 
+          auto-rotate 
+          disable-zoom
+          aria-label="NPC 3D Sid"
+          style="width: 100%; height: 100%;">
+        </model-viewer>
       </div>
     </div>
   </section>
 
-  <!-- POP-UP ALERTA (Validação e trava de segurança) -->
-  <div id="custom-popup" class="popup-overlay hidden">
-    <div class="popup-box">
-      <h3>Atenção!</h3>
-      <p id="popup-text">Por favor, preencha todos os campos do formulário para liberar o contato.</p>
-      <button id="close-popup">Entendido</button>
+  <!-- SEÇÃO DO FORMULÁRIO -->
+  <section id="form-section" class="form-hidden">
+    <div class="form-box">
+      <h2>Insira seus dados abaixo</h2>
+      <!-- O formulário funcional será estruturado aqui na próxima etapa -->
+      <p style="color: #b3b3b3; text-align: center;">Área do Formulário de Negócios</p>
     </div>
-  </div>
+  </section>
 
-  <!-- PORTA INVISÍVEL PARA FUTURA SKILL DE ATENDIMENTO (IA CHATBOT) -->
-  <div id="ai-chat-root"></div>
+  <!-- Script minimalista apenas para a transição de descida -->
+  <script>
+    function toggleMenu() {
+      // Porta de entrada limpa para o menu futuramente
+    }
 
-  <script type="module" src="script.js"></script>
+    function ativarFormulario() {
+      const section = document.getElementById('form-section');
+      section.classList.remove('form-hidden');
+      section.classList.add('form-visible');
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+  
+  <!-- Script externo seguro para renderizar o .glb automaticamente -->
+  <script type="module" src="https://googleapis.com"></script>
 </body>
 </html>
