@@ -159,7 +159,11 @@ footer a { text-decoration: none; }
 @media (min-width: 900px) {
   .hero-copy { text-align: left; padding-left: 6vw; background: linear-gradient(90deg, rgba(0,0,0,.8) 30%, transparent); }
   .hero-copy p { margin-left: 0; }
-  .hero-frame { left: auto; right: 5vw; margin-inline: 0; top: 12vh; width: min(36vw, 460px); }
+  .hero-frame {
+    left: auto; right: 6vw; margin-inline: 0;
+    top: 9vh; bottom: 9vh; aspect-ratio: auto;
+    width: min(44vw, 620px); min-height: 420px;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
