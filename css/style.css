@@ -35,14 +35,6 @@ a { color: inherit; }
   100% { transform: translate(-6vmax,-4vmax) scale(.95); }
 }
 
-/* ========== LOADER ========== */
-#loader { position: fixed; inset: 0; z-index: 60; display: grid; place-content: center; gap: 1rem;
-  background: #050404; text-align: center; transition: opacity .6s; }
-#loader.hidden { opacity: 0; pointer-events: none; }
-.spinner { width: 46px; height: 46px; margin: auto; border-radius: 50%;
-  border: 3px solid rgba(255,255,255,.15); border-top-color: #00ff88; animation: spin 1s linear infinite; }
-@keyframes spin { to { transform: rotate(360deg); } }
-
 /* ========== TOPBAR ========== */
 .topbar { position: absolute; top: 0; left: 0; right: 0; z-index: 10;
   display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.2rem; }
@@ -54,11 +46,25 @@ a { color: inherit; }
 
 /* ========== HERO ========== */
 #hero { position: relative; min-height: 100svh; overflow: hidden; }
-#hero-canvas { position: absolute; inset: 0; }
-#hero-canvas canvas { display: block; }
 .hero-copy { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; text-align: center;
   padding: 5rem 1.2rem 2.2rem; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
 .hero-copy p { max-width: 52ch; margin: .8rem auto 1.4rem; }
+
+/* ========== HERO COM GIF (container de vidro por cima do hero) ========== */
+.hero-frame {
+  position: absolute; top: 9vh; left: 0; right: 0; margin-inline: auto;
+  width: min(78vw, 430px); aspect-ratio: 1 / 1; z-index: 1;
+  animation: float 7s ease-in-out infinite;
+  box-shadow: 0 30px 70px -12px rgba(0,255,136,.16), 0 34px 90px rgba(122,13,13,.28);
+}
+.hero-gif {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: saturate(.9) brightness(.95) contrast(1.02);
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
 
 /* ========== BOTÕES ========== */
 .btn { display: inline-block; text-decoration: none; font-weight: 700; color: #fff; cursor: pointer;
@@ -86,7 +92,7 @@ a { color: inherit; }
   -webkit-mask-composite: xor;
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
-  animation: orbit 10s linear infinite; /* reflexo lento em volta do vidro */
+  animation: orbit 10s linear infinite;
   pointer-events: none;
 }
 @keyframes orbit { to { --ang: 360deg; } }
@@ -107,7 +113,7 @@ a { color: inherit; }
 .carousel > * { scroll-snap-align: center; }
 .card { padding: 1.6rem; }
 
-/* ========== REVEAL (entradas de todos os lados) ========== */
+/* ========== REVEAL ========== */
 [data-reveal] { opacity: 0; transform: translate3d(var(--tx,0), var(--ty,0), 0) scale(var(--s,1));
   transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
 [data-reveal].revealed { opacity: 1; transform: none; }
@@ -117,7 +123,7 @@ a { color: inherit; }
 [data-reveal="bottom"]{ --ty:  70px; }
 [data-reveal="zoom"]  { --s: .92; }
 
-/* ========== MARQUEE (CSS, mesmo efeito da tag) ========== */
+/* ========== MARQUEE ========== */
 .marquee { overflow: hidden; padding: 1rem 0; border-block: 1px solid rgba(255,255,255,.12);
   background: rgba(0,0,0,.4); backdrop-filter: blur(6px); }
 .marquee-track { display: flex; width: max-content; animation: marquee 22s linear infinite; }
@@ -153,27 +159,8 @@ footer a { text-decoration: none; }
 @media (min-width: 900px) {
   .hero-copy { text-align: left; padding-left: 6vw; background: linear-gradient(90deg, rgba(0,0,0,.8) 30%, transparent); }
   .hero-copy p { margin-left: 0; }
+  .hero-frame { left: auto; right: 5vw; margin-inline: 0; top: 12vh; width: min(36vw, 460px); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-    }
-/* ========== HERO COM GIF (moldura de vidro) ========== */
-.hero-frame {
-  position: absolute; top: 9vh; left: 0; right: 0; margin-inline: auto;
-  width: min(78vw, 430px); aspect-ratio: 1 / 1; z-index: 1;
-  animation: float 7s ease-in-out infinite;
-  box-shadow: 0 30px 70px -12px rgba(0,255,136,.16), 0 34px 90px rgba(122,13,13,.28);
-}
-.hero-gif {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  opacity: 0; transition: opacity .9s ease;
-  filter: saturate(.9) brightness(.95) contrast(1.02);
-}
-.hero-gif.loaded { opacity: 1; }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }l
-  50%      { transform: translateY(-10px); }
-}
-@media (min-width: 900px) {
-  .hero-frame { left: auto; right: 5vw; margin-inline: 0; top: 12vh; width: min(36vw, 460px); }
 }
