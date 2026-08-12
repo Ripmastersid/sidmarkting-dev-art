@@ -45,3 +45,9 @@ form.addEventListener('submit', (e) => {
 
 // ----- Ano do rodapé -----
 document.getElementById('year').textContent = new Date().getFullYear();
+// ----- Fade-in do GIF quando terminar de carregar -----
+const gif = document.getElementById('hero-gif');
+if (gif) {
+  if (gif.complete && gif.naturalWidth) gif.classList.add('loaded');
+  else gif.addEventListener('load', () => gif.classList.add('loaded'), { once: true });
+}
