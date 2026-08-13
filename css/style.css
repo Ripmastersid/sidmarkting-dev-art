@@ -50,7 +50,7 @@ a { color: inherit; }
   padding: 5rem 1.2rem 2.2rem; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
 .hero-copy p { max-width: 52ch; margin: .8rem auto 1.4rem; }
 
-/* ========== HERO COM GIF (container de vidro por cima do hero) ========== */
+/* ========== HERO COM GIF (mobile: quadrado centralizado) ========== */
 .hero-frame {
   position: absolute; top: 9vh; left: 0; right: 0; margin-inline: auto;
   width: min(78vw, 430px); aspect-ratio: 1 / 1; z-index: 1;
@@ -159,6 +159,7 @@ footer a { text-decoration: none; }
 @media (min-width: 900px) {
   .hero-copy { text-align: left; padding-left: 6vw; background: linear-gradient(90deg, rgba(0,0,0,.8) 30%, transparent); }
   .hero-copy p { margin-left: 0; }
+  /* Desktop: moldura estica e ocupa o lado direito do hero */
   .hero-frame {
     left: auto; right: 6vw; margin-inline: 0;
     top: 9vh; bottom: 9vh; aspect-ratio: auto;
